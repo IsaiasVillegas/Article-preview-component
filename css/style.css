@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+:root {
+  --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --desaturated-dark-blue: hsl(214, 17%, 51%);
+  --grayish-blue: hsl(212, 23%, 69%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+  --font-manrope: "Manrope", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-manrope);
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1.6;
+  background-color: var(--light-grayish-blue);
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.article {
+  background-color: white;
+  width: 326px;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 800px) {
+  .article {
+    display: flex;
+    width: 730px;
+  }
+}
+
+.article__picture {
+  display: block;
+  width: 100%;
+  height: 20rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+@media (min-width: 800px) {
+  .article__picture {
+    width: 28.5rem;
+    height: 28rem;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 1rem;
+  }
+}
+
+.article__body {
+  padding: 3.5rem 4rem 2rem 3rem;
+}
+
+@media (min-width: 800px) {
+  .article__body {
+    padding-bottom: 1rem;
+    padding-left: 4rem;
+  }
+}
+
+.article .heading-primary {
+  color: var(--very-dark-grayish-blue);
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+
+@media (min-width: 800px) {
+  .article .heading-primary {
+    font-size: 2rem;
+    line-height: 1.4;
+  }
+}
+
+.article .paragraph {
+  color: var(--desaturated-dark-blue);
+}
+
+.article .paragraph--share {
+  color: var(--grayish-blue);
+  text-transform: uppercase;
+  letter-spacing: 4.5px;
+  margin-right: 2rem;
+}
+
+.article__share-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem 2rem;
+  height: 70px;
+  position: relative;
+}
+
+@media (min-width: 800px) {
+  .article__share-box {
+    padding: 0.5rem 4rem 2rem;
+  }
+}
+
+.article__share-avatar {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  margin-right: 1.5rem;
+}
+
+.article__share-name {
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+  color: var(--very-dark-grayish-blue);
+  font-weight: 700;
+}
+
+.article__share-date {
+  color: var(--grayish-blue);
+  font-weight: 500;
+}
+
+.article__share-btn {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  background-color: var(--light-grayish-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  transition: all 0.4s;
+}
+
+.article__share-btn:hover {
+  background-color: var(--desaturated-dark-blue);
+  transform: scale(1.1);
+}
+
+.article__share-btn:hover svg {
+  filter: brightness(2.5);
+}
+
+.article__share-active {
+  display: flex;
+  align-items: center;
+  background-color: var(--very-dark-grayish-blue);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-left: 3rem;
+  visibility: hidden;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+@media (min-width: 800px) {
+  .article__share-active {
+    border-radius: 1rem;
+    box-shadow: 1rem 1rem 2rem rgba(72, 85, 106, 0.4);
+    width: 25rem;
+    height: 5.5rem;
+    top: -7rem;
+    left: 26.5rem;
+  }
+  .article__share-active::after {
+    content: "";
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--very-dark-grayish-blue);
+    transform: translate(-9.3rem, 2.7rem) rotate(45deg);
+  }
+}
+
+.article__social-link:not(:last-of-type) {
+  margin-right: 1.5rem;
+}
+
+.article__social-icon:hover {
+  transform: scale(1.3);
+}
+
+.visible {
+  visibility: visible;
+}
+
+.btnActivo {
+  background-color: var(--desaturated-dark-blue);
+}
+
+.btnActivo svg {
+  filter: brightness(2.5);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.attribution a {
+  color: #3e52a3;
+}
